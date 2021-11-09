@@ -7,35 +7,30 @@
     <ImageView
         android:id="@+id/photoUser"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginBottom="16dp"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         android:src="@drawable/photo1" />
-
     <TextView
         android:id="@+id/nameUser"
-        android:text="Text for edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="22sp"/>
     <TextView
-        android:id="@+id/lastOnlinelUser"
-        android:text="Text for edit"
+        android:id="@+id/lastOnlineUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="22sp"/>
     <TextView
         android:id="@+id/emailUser"
-        android:text="Text for edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="22sp"/>
     <TextView
         android:id="@+id/hobbyUser"
-        android:text="Text for edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"

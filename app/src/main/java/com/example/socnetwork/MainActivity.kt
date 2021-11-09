@@ -1,36 +1,15 @@
 package com.example.socnetwork
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.TextView
-import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import android.content.Context
-import android.graphics.Bitmap
-import android.provider.AlarmClock.EXTRA_MESSAGE
-
-import android.view.LayoutInflater
-
-import android.view.ViewGroup
-import android.widget.ImageView
-
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.user_short.view.*
 
-import java.net.HttpCookie.parse
-import java.net.URI
-import java.util.logging.Level.parse
-
-
 class MainActivity : AppCompatActivity() {
-
-    // посилання на ViewModel - це потрібно щоб повязати ViewModel з даним Fragment (контролером інтерфейсу користувача)
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,27 +22,25 @@ class MainActivity : AppCompatActivity() {
     private fun createOneElement() {
         val allUser: List<UserData> = userViewModel.getUsersList()
         var generatedId: Int = 0
+        val context: Context = this
+        val textBeforeNameUser: String = context.getString(R.string.beforeNameUser);
+        val textBeforeEmailUser: String = context.getString(R.string.beforeEmailUser);
+        val textBeforeHobbyUser: String = context.getString(R.string.beforeHobbyUser);
+        val textBeforeLastOnlineUser: String = context.getString(R.string.beforeLastOnlineUser);
+
         for (oneUser in allUser) {
-            // Готуєм елемент який буде вставлятись
             val view: View = layoutInflater.inflate(R.layout.user_short, null)
-            // Знаходим батьківський елемент куди буде вставлятись user_short.xml
             val layout = findViewById<LinearLayout>(R.id.users_list_wrapper)
+            var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.getPhotoUser(), null, null)
 
+            if(photo == 0) {
+                photo = resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)
+            }
 
-
-            // assets folder image file name with extension
-            val fileName = "flower6.jpg"
-
-
-            // show bitmap on first image view
-
-            // get the bitmap from assets folder and show on second image view
-            val photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.photo, null, null)
             view.photoUser.setImageResource(photo);
-            view.nameUser.text = oneUser.name
-            view.lastOnlinelUser.text = oneUser.lastOnline
+            view.nameUser.text = (textBeforeNameUser + " " + oneUser.getNameUser())
+            view.lastOnlinelUser.text = (textBeforeEmailUser + " " + oneUser.getLastOnlineUser())
             view.setId(generatedId);
-            //Вставляєм user_short.xml в users_list_wrapper (він знаходиться в activity_main.xml)
             layout.addView(view)
             generatedId++
         }
@@ -75,6 +52,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("myKey", idUser)
         startActivity(intent)
     }
-
 }
 

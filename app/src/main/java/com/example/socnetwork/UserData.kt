@@ -1,14 +1,34 @@
 package com.example.socnetwork
 
-data class UserData(var name: String, var email: String, var hobby: String, var lastOnline: String, var photo: String) {
+data class UserData(private var name: String, private var email: String, private var hobby: String, private var lastOnline: String, private var photo: String) {
+
     init {
-        testCreatePhoto()
+        createPhoto()
     }
 
-    fun testCreatePhoto() {
+    fun getNameUser(): String {
+        return name
+    }
+
+    fun getEmailUser(): String {
+        return email
+    }
+
+    fun getHobbyUser(): String {
+        return hobby
+    }
+
+    fun getLastOnlineUser(): String {
+        return lastOnline
+    }
+
+    fun getPhotoUser(): String {
+        return photo
+    }
+
+    fun createPhoto() {
         if (photo.length == 0) {
             photo = "no"
         }
     }
-
 }

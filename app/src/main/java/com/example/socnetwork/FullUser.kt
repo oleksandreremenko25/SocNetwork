@@ -1,18 +1,16 @@
 package com.example.socnetwork
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import android.content.Intent;
 import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
-import kotlinx.android.synthetic.main.user_short.view.*
 
 class FullUser : AppCompatActivity()  {
-    // посилання на ViewModel - це потрібно щоб повязати ViewModel з даним Fragment (контролером інтерфейсу користувача)
     private lateinit var userViewModel: UserViewModel
-
     var nameUser: TextView? = null
+    var lastOnlineUser: TextView? = null
     var emailUser: TextView? = null
     var hobbyUser: TextView? = null
 
@@ -21,21 +19,30 @@ class FullUser : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_full)
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        var photoUser: ImageView = findViewById(R.id.photoUser)
+        val photoUser: ImageView = findViewById(R.id.photoUser)
         nameUser = findViewById(R.id.nameUser)
+        lastOnlineUser = findViewById(R.id.lastOnlineUser)
         emailUser = findViewById(R.id.emailUser)
         hobbyUser = findViewById(R.id.hobbyUser)
+        val context: Context = this
+        val textBeforeNameUser: String = context.getString(R.string.beforeNameUser);
+        val textBeforeEmailUser: String = context.getString(R.string.beforeEmailUser);
+        val textBeforeHobbyUser: String = context.getString(R.string.beforeHobbyUser);
+        val textBeforeLastOnlineUser: String = context.getString(R.string.beforeLastOnlineUser);
 
         val intent = intent
-        val message: Int? = intent.getIntExtra("myKey", 0)
+        val message: Int = intent.getIntExtra("myKey", 0)
         val allUser: List<UserData> = userViewModel.getUsersList()
 
-        val oneUser: UserData = allUser[message!!]
-        val photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.photo, null, null)
+        val oneUser: UserData = allUser[message]
+        var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.getPhotoUser(), null, null)
+        if(photo == 0) {
+            photo = resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)
+        }
         photoUser.setImageResource(photo);
-        nameUser?.text = oneUser.name
-//        emailUser?.text = oneUser.email
-//        hobbyUser?.text = oneUser.hobby
-
+        nameUser?.text = (textBeforeNameUser + " " + oneUser.getNameUser())
+        lastOnlineUser?.text = (textBeforeEmailUser + " " + oneUser.getLastOnlineUser())
+        emailUser?.text = (textBeforeHobbyUser + " " + oneUser.getEmailUser())
+        hobbyUser?.text = (textBeforeLastOnlineUser + " " + oneUser.getHobbyUser())
     }
 }

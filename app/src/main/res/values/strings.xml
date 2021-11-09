@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SocNetwork</string>
+    <string name="beforeNameUser">Name: </string>
+    <string name="beforeEmailUser">Email: </string>
+    <string name="beforeHobbyUser">Hobby: </string>
+    <string name="beforeLastOnlineUser">Last online: </string>
 </resources>
