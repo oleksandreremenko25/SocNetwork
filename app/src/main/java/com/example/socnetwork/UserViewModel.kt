@@ -22,8 +22,4 @@ class UserViewModel : ViewModel() {
     init {
         _allUserList.value = usersList
     }
-
-    fun getUsersList() : List<UserData> {
-        return allUserList.value!!
-    }
 }

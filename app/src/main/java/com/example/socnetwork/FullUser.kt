@@ -32,17 +32,17 @@ class FullUser : AppCompatActivity()  {
 
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
-        val allUser: List<UserData> = userViewModel.getUsersList()
+        val allUser: List<UserData> = userViewModel.allUserList.value!!
 
         val oneUser: UserData = allUser[message]
-        var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.getPhotoUser(), null, null)
+        var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.photo, null, null)
         if(photo == 0) {
             photo = resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)
         }
         photoUser.setImageResource(photo);
-        nameUser?.text = (textBeforeNameUser + " " + oneUser.getNameUser())
-        lastOnlineUser?.text = (textBeforeEmailUser + " " + oneUser.getLastOnlineUser())
-        emailUser?.text = (textBeforeHobbyUser + " " + oneUser.getEmailUser())
-        hobbyUser?.text = (textBeforeLastOnlineUser + " " + oneUser.getHobbyUser())
+        nameUser?.text = (textBeforeNameUser + " " + oneUser.name)
+        lastOnlineUser?.text = (textBeforeEmailUser + " " + oneUser.lastOnline)
+        emailUser?.text = (textBeforeHobbyUser + " " + oneUser.email)
+        hobbyUser?.text = (textBeforeLastOnlineUser + " " + oneUser.hobby)
     }
 }
