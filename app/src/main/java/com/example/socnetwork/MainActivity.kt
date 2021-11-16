@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun showUsers(users: List<UserData>) {
+    fun showUsers(users: List<User>) {
         var generatedId: Int = 0
         val context: Context = this
         val textBeforeNameUser: String = context.getString(R.string.beforeNameUser);

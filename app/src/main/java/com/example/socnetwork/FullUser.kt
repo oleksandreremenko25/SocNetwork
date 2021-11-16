@@ -32,9 +32,9 @@ class FullUser : AppCompatActivity()  {
 
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
-        val allUser: List<UserData> = userViewModel.allUserList.value!!
+        val allUser: List<User> = userViewModel.allUserList.value!!
 
-        val oneUser: UserData = allUser[message]
+        val oneUser: User = allUser[message]
         var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.photo, null, null)
         if(photo == 0) {
             photo = resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)
