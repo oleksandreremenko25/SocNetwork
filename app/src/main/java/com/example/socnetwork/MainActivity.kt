@@ -18,16 +18,16 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        createOneElement()
+        observeUsers()
     }
 
-    private fun createOneElement() {
+    private fun observeUsers() {
         userViewModel.allUserList.observe(this, Observer { users ->
             showUsers(users)
         })
     }
 
-    fun showUsers(users: List<User>) {
+    private fun showUsers(users: List<User>) {
         var generatedId: Int = 0
         val context: Context = this
         val textBeforeNameUser: String = context.getString(R.string.beforeNameUser);
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun userShortClick(views: View) {
-        val intent = Intent(this, FullUser::class.java)
+        val intent = Intent(this, FullUserActivity::class.java)
         val idUser: Int = views.id
         intent.putExtra("myKey", idUser)
         startActivity(intent)

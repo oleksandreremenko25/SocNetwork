@@ -12,4 +12,9 @@ class UserViewModel : ViewModel() {
     init {
         _allUserList.value = UserData().usersList
     }
+
+    fun setUserId(key: Int) {
+        val lisOneUser: List<User> = listOf(UserData().usersList[key])
+        _allUserList.value = lisOneUser
+    }
 }
