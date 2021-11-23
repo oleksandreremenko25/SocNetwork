@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -9,30 +13,125 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/photo1" />
-    <TextView
-        android:id="@+id/nameUser"
+        android:scaleType="centerCrop" />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="22sp"/>
-    <TextView
-        android:id="@+id/lastOnlineUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="22sp"/>
-    <TextView
-        android:id="@+id/emailUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="22sp"/>
-    <TextView
-        android:id="@+id/hobbyUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="22sp"/>
+        android:layout_height="match_parent"
+        style="@style/wrapper_detail"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/item_detail"
+            android:background="@drawable/line">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/fasolid900"
+                android:text="@string/fa_solid_about_me"
+                style="@style/fontAwesome"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleNameUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beforeNameUser"
+                    style="@style/title"/>
+                <TextView
+                    android:id="@+id/nameUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First And Full Name"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/item_detail"
+            android:background="@drawable/line">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fa_solid_last_online"
+                android:fontFamily="@font/fasolid900"
+                style="@style/fontAwesome"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleOnlineUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beforeLastOnlineUser"
+                    style="@style/title"/>
+                <TextView
+                    android:id="@+id/lastOnlineUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/item_detail"
+            android:background="@drawable/line">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fa_solid_email"
+                android:fontFamily="@font/fasolid900"
+                style="@style/fontAwesome"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleEmailUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beforeEmailUser"
+                    style="@style/title"/>
+                <TextView
+                    android:id="@+id/emailUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/item_detail"
+            android:background="@drawable/line">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fa_solid_hobbies"
+                android:fontFamily="@font/fasolid900"
+                style="@style/fontAwesome"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/titleHobbyUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beforeHobbyUser"
+                    style="@style/title"/>
+                <TextView
+                    android:id="@+id/hobbyUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
+</ScrollView>

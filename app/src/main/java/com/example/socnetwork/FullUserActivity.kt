@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.user_short.view.*
+
+
 
 class FullUserActivity : AppCompatActivity()  {
     private lateinit var userViewModel: UserViewModel
@@ -36,28 +40,17 @@ class FullUserActivity : AppCompatActivity()  {
     private fun observeUser(message: Int) {
         userViewModel.setUserId(message)
 
-        userViewModel.allUserList.observe(this, Observer { user ->
+        userViewModel.user.observe(this, Observer { user ->
             showUser(user)
         })
     }
 
-    private fun showUser(user: List<User>) {
-            val context: Context = this
-            val textBeforeNameUser: String = context.getString(R.string.beforeNameUser);
-            val textBeforeEmailUser: String = context.getString(R.string.beforeEmailUser);
-            val textBeforeHobbyUser: String = context.getString(R.string.beforeHobbyUser);
-            val textBeforeLastOnlineUser: String = context.getString(R.string.beforeLastOnlineUser);
-            val oneUser: User = user.get(0)
-            var photo = resources.getIdentifier("com.example.socnetwork:drawable/" + oneUser.photo, null, null)
+    private fun showUser(oneUser: User) {
+        Picasso.get().load(oneUser.photo).placeholder(resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)).into(photoUser);
 
-            if(photo == 0) {
-                photo = resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)
-            }
-
-            photoUser?.setImageResource(photo);
-            nameUser?.text = (textBeforeNameUser + " " + oneUser.name)
-            lastOnlineUser?.text = (textBeforeEmailUser + " " + oneUser.lastOnline)
-            emailUser?.text = (textBeforeHobbyUser + " " + oneUser.email)
-            hobbyUser?.text = (textBeforeLastOnlineUser + " " + oneUser.hobby)
+        nameUser?.text = oneUser.name
+        lastOnlineUser?.text = oneUser.lastOnline
+        emailUser?.text = oneUser.email
+        hobbyUser?.text = oneUser.hobby
     }
 }

@@ -4,4 +4,8 @@
     <string name="beforeEmailUser">Email: </string>
     <string name="beforeHobbyUser">Hobby: </string>
     <string name="beforeLastOnlineUser">Last online: </string>
+    <string name="fa_solid_about_me">&#xf007;</string>
+    <string name="fa_solid_email">&#xf0e0;</string>
+    <string name="fa_solid_hobbies">&#xf206;</string>
+    <string name="fa_solid_last_online">&#xf017;</string>
 </resources>

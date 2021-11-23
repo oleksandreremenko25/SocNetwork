@@ -6,15 +6,17 @@ import androidx.lifecycle.ViewModel
 import com.example.socnetwork.UserData
 
 class UserViewModel : ViewModel() {
-    private val _allUserList = MutableLiveData<List<User>>()
-    val allUserList: LiveData<List<User>> = _allUserList
+    private var _allUserList = MutableLiveData<List<User>>()
+    var allUserList: LiveData<List<User>> = _allUserList
+
+    private var _user = MutableLiveData<User>()
+    val user: LiveData<User> = _user
 
     init {
         _allUserList.value = UserData().usersList
     }
 
     fun setUserId(key: Int) {
-        val lisOneUser: List<User> = listOf(UserData().usersList[key])
-        _allUserList.value = lisOneUser
+        _user.value = UserData().usersList[key]
     }
 }
