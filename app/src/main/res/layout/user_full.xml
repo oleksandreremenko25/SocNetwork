@@ -1,136 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-    <ImageView
-        android:id="@+id/photoUser"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginBottom="16dp"
-        android:scaleType="centerCrop" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        style="@style/wrapper_detail"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/fullUserAboutWrap">
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp">
+            <ImageView
+                android:id="@+id/photoUser"
+                android:layout_marginBottom="16dp"
+                android:scaleType="centerCrop"
+                android:layout_width="200dp"
+                android:layout_height="200dp" />
+        </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/item_detail"
-            android:background="@drawable/line">
+            android:orientation="vertical"
+            style="@style/fullUserAboutRightPart">
+            <TextView
+                android:id="@+id/nameUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First And Full Name"
+                android:textSize="22sp"
+                style="@style/fullUserAboutName"/>
+            <TextView
+                android:id="@+id/aboutUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                style="@style/fullUserAboutHobby"/>
+        </LinearLayout>
+    </LinearLayout>
+<!--    editFolWrap  -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/editFolWrap">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/buttonEditProfile"
+            android:text="@string/buttonEdit">
+        </Button>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/followingWrap">
+            <TextView
+                android:id="@+id/numberFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/numberFollowing"
+                android:text=""/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fasolid900"
-                android:text="@string/fa_solid_about_me"
-                style="@style/fontAwesome"/>
-            <LinearLayout
-                android:layout_width="match_parent"
+                style="@style/tittleFollowing"
+                android:text="@string/tittleFollowing"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/followersgWrap"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/numberFollowers"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                style="@style/numberFollowers"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tittleFollowers"
+                android:text="@string/tittleFollowers"/>
+        </LinearLayout>
+    </LinearLayout>
+<!--  numberPostsLikesWrap  -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        style="@style/numberPostsLikesWrap">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/corner_posts"
+            style="@style/numberPostsWrap">
+            <TextView
+                android:id="@+id/numberPosts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tittlePosts"
+                style="@style/tittlePosts"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/corner_likes"
+            style="@style/numberLikesWrap">
+            <TextView
+                android:id="@+id/numberLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tittleLikes"
+                style="@style/tittleLikes"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/line">
+    </LinearLayout>
+<!--  listPosts  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/listPosts"
+            style="@style/listPosts">
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                style="@style/autorPostIconNameWrap">
+                <androidx.cardview.widget.CardView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+                    <ImageView
+                        android:id="@+id/autorPostsIcon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
                 <TextView
-                    android:id="@+id/titleNameUser"
+                    android:id="@+id/autorPostsName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/autorPostsName"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/autorPostsLastOnline"
+                    style="@style/authorPostLastOnline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/beforeNameUser"
-                    style="@style/title"/>
-                <TextView
-                    android:id="@+id/nameUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="First And Full Name"
-                    android:textSize="22sp"/>
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/item_detail"
-            android:background="@drawable/line">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fa_solid_last_online"
-                android:fontFamily="@font/fasolid900"
-                style="@style/fontAwesome"/>
-            <LinearLayout
+            android:layout_height="400dp">
+            <VideoView
+                android:id="@+id/videoPost"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/titleOnlineUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/beforeLastOnlineUser"
-                    style="@style/title"/>
-                <TextView
-                    android:id="@+id/lastOnlineUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/item_detail"
-            android:background="@drawable/line">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fa_solid_email"
-                android:fontFamily="@font/fasolid900"
-                style="@style/fontAwesome"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/titleEmailUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/beforeEmailUser"
-                    style="@style/title"/>
-                <TextView
-                    android:id="@+id/emailUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/item_detail"
-            android:background="@drawable/line">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fa_solid_hobbies"
-                android:fontFamily="@font/fasolid900"
-                style="@style/fontAwesome"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/titleHobbyUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/beforeHobbyUser"
-                    style="@style/title"/>
-                <TextView
-                    android:id="@+id/hobbyUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"/>
-            </LinearLayout>
+                android:layout_height="400dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

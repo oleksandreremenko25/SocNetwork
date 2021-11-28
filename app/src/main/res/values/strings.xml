@@ -4,6 +4,14 @@
     <string name="beforeEmailUser">Email: </string>
     <string name="beforeHobbyUser">Hobby: </string>
     <string name="beforeLastOnlineUser">Last online: </string>
+    <string name="buttonEdit">EDIT PROFILE</string>
+    <string name="tittleFollowing">FOLLOWING</string>
+    <string name="tittleFollowers">FOLLOWERS</string>
+    <string name="tittlePosts">POSTS</string>
+    <string name="tittleLikes">LIKES</string>
+
+
+
     <string name="fa_solid_about_me">&#xf007;</string>
     <string name="fa_solid_email">&#xf0e0;</string>
     <string name="fa_solid_hobbies">&#xf206;</string>

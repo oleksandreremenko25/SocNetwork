@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             val view: View = layoutInflater.inflate(R.layout.user_short, null)
             val layout = findViewById<LinearLayout>(R.id.users_list_wrapper)
 
-            Picasso.get().load(oneUser.photo).placeholder(resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)).into(view.photoUser);
+            Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(view.photoUser);
 
             view.nameUser.text = (textBeforeNameUser + " " + oneUser.name)
             view.lastOnlinelUser.text = (textBeforeEmailUser + " " + oneUser.lastOnline)

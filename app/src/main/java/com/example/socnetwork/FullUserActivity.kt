@@ -1,24 +1,34 @@
 package com.example.socnetwork
 
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
+import android.widget.MediaController
+import android.widget.VideoView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.user_short.view.*
-
-
 
 class FullUserActivity : AppCompatActivity()  {
     private lateinit var userViewModel: UserViewModel
     var nameUser: TextView? = null
     var lastOnlineUser: TextView? = null
     var emailUser: TextView? = null
-    var hobbyUser: TextView? = null
     var photoUser: ImageView? = null
+    var aboutUser: TextView? = null
+    var numberFollowing: TextView? = null
+    var numberFollowers: TextView? = null
+    var numberPosts: TextView? = null
+    var numberLikes: TextView? = null
+    var autorPostsIcon: ImageView? = null
+    var autorPostsName: TextView? = null
+    var autorPostsLastOnline: TextView? = null
+    var video: VideoView? = null
+    var mediaController: MediaController? = null
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +37,16 @@ class FullUserActivity : AppCompatActivity()  {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         photoUser = findViewById(R.id.photoUser)
         nameUser = findViewById(R.id.nameUser)
-        lastOnlineUser = findViewById(R.id.lastOnlineUser)
-        emailUser = findViewById(R.id.emailUser)
-        hobbyUser = findViewById(R.id.hobbyUser)
+
+        aboutUser = findViewById(R.id.aboutUser)
+        numberFollowing = findViewById(R.id.numberFollowing)
+        numberFollowers = findViewById(R.id.numberFollowers)
+        numberPosts = findViewById(R.id.numberPosts)
+        numberLikes = findViewById(R.id.numberLikes)
+        autorPostsIcon = findViewById(R.id.autorPostsIcon)
+        autorPostsName = findViewById(R.id.autorPostsName)
+        autorPostsLastOnline = findViewById(R.id.autorPostsLastOnline)
+        video = findViewById(R.id.videoPost)
 
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
@@ -46,11 +63,27 @@ class FullUserActivity : AppCompatActivity()  {
     }
 
     private fun showUser(oneUser: User) {
-        Picasso.get().load(oneUser.photo).placeholder(resources.getIdentifier("com.example.socnetwork:drawable/no", null, null)).into(photoUser);
+        Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(photoUser);
 
         nameUser?.text = oneUser.name
         lastOnlineUser?.text = oneUser.lastOnline
         emailUser?.text = oneUser.email
-        hobbyUser?.text = oneUser.hobby
+        aboutUser?.text = oneUser.about
+        numberFollowing?.text = oneUser.following.toString()
+        numberFollowers?.text = oneUser.followers.toString()
+        numberPosts?.text = oneUser.posts.toString()
+        numberLikes?.text = oneUser.likes.toString()
+
+        Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(autorPostsIcon);
+        autorPostsName?.text = oneUser.name
+        autorPostsLastOnline?.text = oneUser.lastOnline
+
+        mediaController = MediaController(this)
+        mediaController!!.setAnchorView(this.video)
+        video!!.setMediaController(mediaController)
+        video!!.setVideoURI(Uri.parse("https://www.youtube.com/embed/srMFb6zpx2Y"))
+        video!!.requestFocus()
+        video!!.start()
     }
 }
+

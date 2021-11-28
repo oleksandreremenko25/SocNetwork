@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#19b8e5</color>
+    <!--    Color for Materidl Design-->
+    <color name="primary">#e71212</color>
+    <color name="primary_dark">#e71212</color>
+    <color name="primary_red">#e71212</color>
+    <color name="primary_black">#3f4243</color>
+    <color name="primary_gray">#848586</color>
+    <color name="primary_white">#ffffff</color>
 </resources>
