@@ -7,6 +7,12 @@
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <!-- theme UI controls like checkboxes and text fields -->
     </style>
+<!--    user_short.xml-->
+    <style name="shortUserIcon">
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+<!--    user_full.xml-->
+
     <style name="fullUserAboutWrap">
         <item name="android:padding">15dp</item>
     </style>

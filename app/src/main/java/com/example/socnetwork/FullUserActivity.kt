@@ -47,7 +47,7 @@ class FullUserActivity : AppCompatActivity()  {
         autorPostsName = findViewById(R.id.autorPostsName)
         autorPostsLastOnline = findViewById(R.id.autorPostsLastOnline)
         video = findViewById(R.id.videoPost)
-
+        video?.clearFocus()
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
 
@@ -81,9 +81,8 @@ class FullUserActivity : AppCompatActivity()  {
         mediaController = MediaController(this)
         mediaController!!.setAnchorView(this.video)
         video!!.setMediaController(mediaController)
-        video!!.setVideoURI(Uri.parse("https://www.youtube.com/embed/srMFb6zpx2Y"))
-        video!!.requestFocus()
-        video!!.start()
+        //video!!.setVideoURI(Uri.parse("https://www.youtube.com/embed/srMFb6zpx2Y"))
+
     }
 }
 
