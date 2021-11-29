@@ -39,7 +39,7 @@ class FullUserActivity : AppCompatActivity()  {
         autorPostsIcon = findViewById(R.id.autorPostsIcon)
         autorPostsName = findViewById(R.id.autorPostsName)
         autorPostsLastOnline = findViewById(R.id.autorPostsLastOnline)
-        
+
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
 
