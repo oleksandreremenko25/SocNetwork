@@ -1,14 +1,10 @@
 package com.example.socnetwork
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
-import android.widget.MediaController
-import android.widget.VideoView
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
 import com.squareup.picasso.Picasso
@@ -27,8 +23,6 @@ class FullUserActivity : AppCompatActivity()  {
     var autorPostsIcon: ImageView? = null
     var autorPostsName: TextView? = null
     var autorPostsLastOnline: TextView? = null
-    var video: VideoView? = null
-    var mediaController: MediaController? = null
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +31,6 @@ class FullUserActivity : AppCompatActivity()  {
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         photoUser = findViewById(R.id.photoUser)
         nameUser = findViewById(R.id.nameUser)
-
         aboutUser = findViewById(R.id.aboutUser)
         numberFollowing = findViewById(R.id.numberFollowing)
         numberFollowers = findViewById(R.id.numberFollowers)
@@ -46,8 +39,7 @@ class FullUserActivity : AppCompatActivity()  {
         autorPostsIcon = findViewById(R.id.autorPostsIcon)
         autorPostsName = findViewById(R.id.autorPostsName)
         autorPostsLastOnline = findViewById(R.id.autorPostsLastOnline)
-        video = findViewById(R.id.videoPost)
-        video?.clearFocus()
+        
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
 
@@ -77,12 +69,6 @@ class FullUserActivity : AppCompatActivity()  {
         Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(autorPostsIcon);
         autorPostsName?.text = oneUser.name
         autorPostsLastOnline?.text = oneUser.lastOnline
-
-        mediaController = MediaController(this)
-        mediaController!!.setAnchorView(this.video)
-        video!!.setMediaController(mediaController)
-        //video!!.setVideoURI(Uri.parse("https://www.youtube.com/embed/srMFb6zpx2Y"))
-
     }
 }
 

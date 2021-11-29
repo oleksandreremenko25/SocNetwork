@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,8 +22,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                >
+                android:layout_height="200dp">
                 <ImageView
                     android:id="@+id/photoUser"
                     android:layout_marginBottom="16dp"
@@ -50,7 +50,7 @@
                     style="@style/fullUserAboutHobby"/>
             </LinearLayout>
         </LinearLayout>
-    <!--    editFolWrap  -->
+        <!--    editFolWrap  -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                     android:text="@string/tittleFollowers"/>
             </LinearLayout>
         </LinearLayout>
-    <!--  numberPostsLikesWrap  -->
+        <!--  numberPostsLikesWrap  -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/line">
         </LinearLayout>
-    <!--  listPosts  -->
+        <!--  listPosts  -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,16 +192,8 @@
                         android:text="" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-                <VideoView
-                    android:id="@+id/videoPost"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:focusableInTouchMode="false"
-                    android:focusable="false"/>
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
