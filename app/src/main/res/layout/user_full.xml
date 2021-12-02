@@ -1,196 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/photoUser"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/nameUser"
+        style="@style/fullUserAboutName"
+        android:layout_width="wrap_content"
+        app:layout_constrainedWidth="true"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Name"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/aboutUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="about"
+        android:textSize="22sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/nameUser" />
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUser" />
+    <!--    editFolWrap  -->
+    <Button
+        style="@style/buttonEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/buttonEdit"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"/>
     <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout">
+        <TextView
+            android:id="@+id/numberFollowing"
+            style="@style/numberFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+        <TextView
+            style="@style/tittleFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tittleFollowing" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space">
+        <TextView
+            android:id="@+id/numberFollowers"
+            style="@style/numberFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+        <TextView
+            style="@style/tittleFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tittleFollowers" />
+    </LinearLayout>
+    <!--  numberPostsLikesWrap  -->
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        style="@style/numberPostsLikesWrap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
         <LinearLayout
+            style="@style/numberPostsWrap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/fullUserAboutWrap">
-            <androidx.cardview.widget.CardView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
-                android:layout_width="200dp"
-                android:layout_height="200dp">
-                <ImageView
-                    android:id="@+id/photoUser"
-                    android:layout_marginBottom="16dp"
-                    android:scaleType="centerCrop"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp" />
-            </androidx.cardview.widget.CardView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                style="@style/fullUserAboutRightPart">
-                <TextView
-                    android:id="@+id/nameUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="First And Full Name"
-                    android:textSize="22sp"
-                    style="@style/fullUserAboutName"/>
-                <TextView
-                    android:id="@+id/aboutUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="22sp"
-                    style="@style/fullUserAboutHobby"/>
-            </LinearLayout>
-        </LinearLayout>
-        <!--    editFolWrap  -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/editFolWrap">
-            <Button
+            android:layout_weight="1"
+            android:background="@drawable/corner_posts"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/numberPosts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/buttonEditProfile"
-                android:text="@string/buttonEdit">
-            </Button>
-            <LinearLayout
+                android:text=" " />
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                style="@style/followingWrap">
-                <TextView
-                    android:id="@+id/numberFollowing"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/numberFollowing"
-                    android:text=""/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tittleFollowing"
-                    android:text="@string/tittleFollowing"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/followersgWrap"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/numberFollowers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/numberFollowers"
-                    android:text=""/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tittleFollowers"
-                    android:text="@string/tittleFollowers"/>
-            </LinearLayout>
-        </LinearLayout>
-        <!--  numberPostsLikesWrap  -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            style="@style/numberPostsLikesWrap">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/corner_posts"
-                style="@style/numberPostsWrap">
-                <TextView
-                    android:id="@+id/numberPosts"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" "/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tittlePosts"
-                    style="@style/tittlePosts"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/corner_likes"
-                style="@style/numberLikesWrap">
-                <TextView
-                    android:id="@+id/numberLikes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tittleLikes"
-                    style="@style/tittleLikes"/>
-            </LinearLayout>
+                android:text="@string/tittlePosts"
+                style="@style/tittlePosts"/>
         </LinearLayout>
         <LinearLayout
+            style="@style/numberLikesWrap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/line">
-        </LinearLayout>
-        <!--  listPosts  -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/corner_likes"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/numberLikes"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/listPosts"
-                style="@style/listPosts">
-                <LinearLayout
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:orientation="horizontal"
-                    style="@style/autorPostIconNameWrap">
-                    <androidx.cardview.widget.CardView
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        app:cardCornerRadius="50dp"
-                        app:cardElevation="0dp"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp">
-                        <ImageView
-                            android:id="@+id/autorPostsIcon"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:scaleType="centerCrop" />
-                    </androidx.cardview.widget.CardView>
-                    <TextView
-                        android:id="@+id/autorPostsName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/autorPostsName"
-                        android:text="" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/autorPostsLastOnline"
-                        style="@style/authorPostLastOnline"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="" />
-                </LinearLayout>
-            </LinearLayout>
+                android:text="" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tittleLikes"
+                style="@style/tittleLikes"/>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/line"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:layout_editor_absoluteX="0dp"
+        android:orientation="horizontal" />
+    <!--  listPosts  -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        <ImageView
+            android:id="@+id/autorPostsIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/autorPostsName"
+        style="@style/autorPostsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="autorPostsName"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+    <TextView
+        android:id="@+id/autorPostsLastOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="autorPostsLastOnline"
+        app:layout_constraintBottom_toBottomOf="@+id/autorPostsName"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintTop_toTopOf="@+id/autorPostsName" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

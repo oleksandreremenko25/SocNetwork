@@ -12,40 +12,15 @@
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
 <!--    user_full.xml-->
-
-    <style name="fullUserAboutWrap">
-        <item name="android:padding">15dp</item>
-    </style>
-    <style name="fullUserAboutRightPart">
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingRight">10dp</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingLeft">10dp</item>
-    </style>
     <style name="fullUserAboutName">
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold|normal</item>
     </style>
-    <style name="fullUserAboutHobby">
-        <item name="android:paddingTop">5dp</item>
-    </style>
-    <style name="editFolWrap">
-        <item name="android:layout_gravity">center_horizontal</item>
-    </style>
     <style name="buttonEditProfile" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="cornerFamilyTopLeft">rounded</item>
-        <item name="cornerFamilyBottomLeft">rounded</item>
-        <item name="cornerFamilyTopRight">cut</item>
-        <item name="cornerFamilyBottomRight">cut</item>
         <item name="cornerSize">8dp</item>
         <item name="strokeColor">@color/primary_red</item>
         <item name="android:textColor">@color/primary_red</item>
         <item name="strokeWidth">2dp</item>
-    </style>
-    <style name="marginLeftFol">
-        <item name="android:layout_marginLeft">15dp</item>
-    </style>
-    <style name="followingWrap" parent="marginLeftFol">
     </style>
     <style name="numberFollowing">
         <item name="android:textColor">@color/primary_black</item>
@@ -54,9 +29,6 @@
     <style name="tittleFollowing">
         <item name="android:textColor">@color/primary_gray</item>
         <item name="android:textStyle">bold|normal</item>
-    </style>
-    <style name="followersgWrap" parent="marginLeftFol">
-
     </style>
     <style name="numberFollowers">
         <item name="android:textColor">@color/primary_black</item>
@@ -67,48 +39,24 @@
         <item name="android:textStyle">bold|normal</item>
     </style>
     <style name="numberPostsLikesWrap">
-        <item name="android:layout_marginLeft">15dp</item>
-        <item name="android:layout_marginRight">15dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">30dp</item>
-        <item name="android:layout_marginBottom">30dp</item>
-    </style>
-    <style name="numberPostsWrap">
-        <item name="android:textColor">@color/primary_white</item>
-        <item name="android:background">@color/primary_red</item>
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingRight">30dp</item>
-        <item name="android:paddingBottom">10dp</item>
-        <item name="android:paddingLeft">30dp</item>
-    </style>
-    <style name="tittlePosts">
-        <item name="android:paddingLeft">5dp</item>
-    </style>
-    <style name="numberLikesWrap">
-        <item name="android:paddingTop">10dp</item>
-        <item name="android:paddingRight">30dp</item>
-        <item name="android:paddingBottom">10dp</item>
-        <item name="android:paddingLeft">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
     </style>
     <style name="tittleLikes">
         <item name="android:paddingLeft">5dp</item>
     </style>
-    <style name="listPosts">
-        <item name="android:layout_marginTop">15dp</item>
-        <item name="android:layout_marginLeft">15dp</item>
-        <item name="android:layout_marginRight">15dp</item>
+    <style name="numberPostsWrap" parent="numberPostsLikesWrap">
+        <item name="android:textColor">@color/primary_white</item>
+        <item name="android:background">@color/primary_red</item>
     </style>
-    <style name="autorPostIconNameWrap">
-        <item name="android:layout_marginBottom">10dp</item>
+    <style name="numberLikesWrap" parent="numberPostsLikesWrap">
+    </style>
+    <style name="tittlePosts">
+        <item name="android:paddingLeft">5dp</item>
     </style>
     <style name="autorPostsName">
-        <item name="android:layout_gravity">center_vertical</item>
         <item name="android:textColor">@color/primary_black</item>
         <item name="android:textStyle">bold|normal</item>
-        <item name="android:paddingLeft">10dp</item>
-    </style>
-    <style name="authorPostLastOnline">
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:textAlignment">textEnd</item>
     </style>
 </resources>
