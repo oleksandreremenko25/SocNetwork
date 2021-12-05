@@ -20,9 +20,9 @@ class FullUserActivity : AppCompatActivity()  {
     var numberFollowers: TextView? = null
     var numberPosts: TextView? = null
     var numberLikes: TextView? = null
-    var autorPostsIcon: ImageView? = null
-    var autorPostsName: TextView? = null
-    var autorPostsLastOnline: TextView? = null
+    var authorPostsIcon: ImageView? = null
+    var authorPostsName: TextView? = null
+    var authorPostsLastOnline: TextView? = null
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +36,9 @@ class FullUserActivity : AppCompatActivity()  {
         numberFollowers = findViewById(R.id.numberFollowers)
         numberPosts = findViewById(R.id.numberPosts)
         numberLikes = findViewById(R.id.numberLikes)
-        autorPostsIcon = findViewById(R.id.autorPostsIcon)
-        autorPostsName = findViewById(R.id.autorPostsName)
-        autorPostsLastOnline = findViewById(R.id.autorPostsLastOnline)
+        authorPostsIcon = findViewById(R.id.authorPostsIcon)
+        authorPostsName = findViewById(R.id.authorPostsName)
+        authorPostsLastOnline = findViewById(R.id.authorPostsLastOnline)
 
         val intent = intent
         val message: Int = intent.getIntExtra("myKey", 0)
@@ -66,9 +66,9 @@ class FullUserActivity : AppCompatActivity()  {
         numberPosts?.text = oneUser.posts.toString()
         numberLikes?.text = oneUser.likes.toString()
 
-        Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(autorPostsIcon);
-        autorPostsName?.text = oneUser.name
-        autorPostsLastOnline?.text = oneUser.lastOnline
+        Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(authorPostsIcon);
+        authorPostsName?.text = oneUser.name
+        authorPostsLastOnline?.text = oneUser.lastOnline
     }
 }
 
