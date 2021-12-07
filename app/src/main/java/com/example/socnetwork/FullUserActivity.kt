@@ -63,8 +63,12 @@ class FullUserActivity : AppCompatActivity()  {
         aboutUser?.text = oneUser.about
         numberFollowing?.text = oneUser.following.toString()
         numberFollowers?.text = oneUser.followers.toString()
-        numberPosts?.text = oneUser.posts.toString()
-        numberLikes?.text = oneUser.likes.toString()
+
+        val textForNumberPosts: String = getString(R.string.tittlePosts, oneUser.posts.toString())
+        numberPosts?.text = textForNumberPosts
+
+        val textForNumberLikes: String = getString(R.string.tittlePosts, oneUser.likes.toString())
+        numberLikes?.text = textForNumberLikes
 
         Picasso.get().load(oneUser.photo).placeholder(R.drawable.no).into(authorPostsIcon);
         authorPostsName?.text = oneUser.name

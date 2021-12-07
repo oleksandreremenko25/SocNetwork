@@ -7,8 +7,8 @@
     <string name="buttonEdit">EDIT PROFILE</string>
     <string name="tittleFollowing">FOLLOWING</string>
     <string name="tittleFollowers">FOLLOWERS</string>
-    <string name="tittlePosts">POSTS</string>
-    <string name="tittleLikes">LIKES</string>
+    <string name="tittlePosts">%1$S POSTS</string>
+    <string name="tittleLikes">%1$S LIKES</string>
 
 
 
