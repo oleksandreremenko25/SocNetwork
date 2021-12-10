@@ -11,6 +11,18 @@
     <string name="tittleLikes">%1$S LIKES</string>
 
 
+    <string name="mainTittleUserEdit">Сторінка редагування наявного юзера</string>
+    <string name="nameTittleEdit">Edit username</string>
+    <string name="emailTittleEdit">Edit email</string>
+    <string name="hobbyTittleEdit">Edit hobby</string>
+    <string name="lastOnlineTittleEdit">Edit time last online</string>
+    <string name="photoTittleEdit">Edit link user photo</string>
+    <string name="aboutTittleEdit">Edit information about user</string>
+    <string name="followingTittleEdit">Edit number following</string>
+    <string name="followersTittleEdit">Edit nubber followers</string>
+    <string name="postsTittleEdit">Edit tittle for posts</string>
+    <string name="likesTittleEdit">Edit number likes of posts</string>
+
 
     <string name="fa_solid_about_me">&#xf007;</string>
     <string name="fa_solid_email">&#xf0e0;</string>

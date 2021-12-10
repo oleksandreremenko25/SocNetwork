@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity() {
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
-        observeUsers()
+        setContentView(R.layout.user_edit)
+//        setContentView(R.layout.activity_main)
+//        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+//        observeUsers()
     }
 
     private fun observeUsers() {

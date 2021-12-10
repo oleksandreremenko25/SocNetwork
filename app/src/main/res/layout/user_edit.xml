@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/mainTittleEdit"
+        style="@style/tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/mainTittleUserEdit"
+        tools:layout_editor_absoluteX="27dp" />
+
+    <TextView
+        android:id="@+id/nameTittleEdit"
+        style="@style/tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/mainTittleEdit"
+        app:layout_constraintTop_toBottomOf="@+id/mainTittleEdit"
+        app:layout_constraintEnd_toEndOf="@+id/mainTittleEdit"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/nameTittleEdit" />
+
+    <EditText
+        android:id="@+id/nameInputEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/nameTittleEdit"
+        app:layout_constraintTop_toBottomOf="@+id/nameTittleEdit"
+        app:layout_constraintEnd_toEndOf="@+id/nameTittleEdit"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+
+    <TextView
+        android:id="@+id/emailTittleEdit"
+        style="@style/tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/nameInputEdit"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputEdit"
+        app:layout_constraintEnd_toEndOf="@+id/nameInputEdit"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/emailTittleEdit" />
+
+    <EditText
+        android:id="@+id/emailInputEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/emailTittleEdit"
+        app:layout_constraintTop_toBottomOf="@+id/emailTittleEdit"
+        app:layout_constraintEnd_toEndOf="@+id/emailTittleEdit"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Name" />
+</androidx.constraintlayout.widget.ConstraintLayout>

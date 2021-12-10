@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FullUserActivity"></activity>
+        <activity android:name=".EditUserActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

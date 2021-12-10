@@ -7,11 +7,11 @@
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <!-- theme UI controls like checkboxes and text fields -->
     </style>
-<!--    user_short.xml-->
+<!--    user_short.xml    -->
     <style name="shortUserIcon">
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
-<!--    user_full.xml-->
+<!--    user_full.xml    -->
     <style name="fullUserAboutName">
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold|normal</item>
@@ -58,5 +58,11 @@
     <style name="autorPostsName">
         <item name="android:textColor">@color/primary_black</item>
         <item name="android:textStyle">bold|normal</item>
+    </style>
+<!--    user_edit    -->
+    <style name="tittle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold|normal</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>
